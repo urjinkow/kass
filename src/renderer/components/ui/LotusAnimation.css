@@ -1,0 +1,74 @@
+.lotus-animation-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.3;
+  animation: fadeIn 0.8s ease;
+}
+
+.lotus-animation-container.exit {
+  animation: scaleUpFadeOut 0.5s ease forwards;
+}
+
+.lotus-svg {
+  filter: drop-shadow(0 0 20px rgba(201, 162, 39, 0.3));
+}
+
+.lotus-petals {
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+.lotus-petals.inner {
+  animation-delay: 0.5s;
+}
+
+.lotus-center {
+  animation: centerGlow 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes centerGlow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes scaleUpFadeOut {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}

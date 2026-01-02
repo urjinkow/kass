@@ -15,4 +15,8 @@ export function registerReportHandlers() {
   ipcMain.handle('report:close-day', (_, date: string, cashCounted: number, notes: string | null, userId: number) => {
     return reportService.closeDay(date, cashCounted, notes, userId);
   });
+
+  ipcMain.handle('report:get-monthly', (_, year: number, month: number) => {
+    return reportService.getMonthlyReport(year, month);
+  });
 }

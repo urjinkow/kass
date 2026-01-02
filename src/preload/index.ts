@@ -24,6 +24,8 @@ contextBridge.exposeInMainWorld('api', {
     ipcRenderer.invoke('report:get-daily-summary', date),
   getTransactionHistory: (startDate: string, endDate: string) => 
     ipcRenderer.invoke('report:get-transaction-history', startDate, endDate),
+  getMonthlyReport: (year: number, month: number) =>
+    ipcRenderer.invoke('report:get-monthly', year, month),
   closeDay: (date: string, cashCounted: number, notes: string | null, userId: number) => 
     ipcRenderer.invoke('report:close-day', date, cashCounted, notes, userId),
 
@@ -48,6 +50,7 @@ export interface ElectronAPI {
   getTransactionByReceipt: (receiptNumber: string) => Promise<any>;
   getDailySummary: (date: string) => Promise<any>;
   getTransactionHistory: (startDate: string, endDate: string) => Promise<any>;
+  getMonthlyReport: (year: number, month: number) => Promise<any>;
   closeDay: (date: string, cashCounted: number, notes: string | null, userId: number) => Promise<any>;
   printReceipt: (transaction: any, type: 'income' | 'expense') => Promise<any>;
   printDailySummary: (summaryData: any) => Promise<any>;
