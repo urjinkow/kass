@@ -7,7 +7,7 @@ interface SettingsState {
   testPrint: () => Promise<{ success: boolean; error?: string }>;
 }
 
-export const useSettingsStore = create<SettingsState>((set, get) => ({
+export const useSettingsStore = create<SettingsState>((set) => ({
   printerPaperWidth: '80',
   printerPort: 'USB',
 

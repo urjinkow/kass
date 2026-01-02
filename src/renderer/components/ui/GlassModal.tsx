@@ -1,6 +1,4 @@
 import React from 'react';
-import { GlassCard } from './GlassCard';
-import { GlassButton } from './GlassButton';
 
 interface GlassModalProps {
   isOpen: boolean;

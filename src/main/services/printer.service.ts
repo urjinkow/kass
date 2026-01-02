@@ -45,7 +45,6 @@ export class PrinterService {
       const printer = new ThermalPrinter({
         type: PrinterTypes.EPSON,
         interface: this.config.interface as any,
-        characterSet: 'UTF8',
         width: this.config.width,
         removeSpecialCharacters: false
       });
@@ -131,7 +130,6 @@ export class PrinterService {
       const printer = new ThermalPrinter({
         type: PrinterTypes.EPSON,
         interface: this.config.interface as any,
-        characterSet: 'UTF8',
         width: this.config.width,
         removeSpecialCharacters: false
       });
@@ -181,7 +179,6 @@ export class PrinterService {
       const printer = new ThermalPrinter({
         type: PrinterTypes.EPSON,
         interface: this.config.interface as any,
-        characterSet: 'UTF8',
         width: this.config.width
       });
 
