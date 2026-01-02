@@ -55,7 +55,7 @@ export const IncomePage: React.FC = () => {
         setDescription('');
       } else {
         playError();
-        alert(result.error);
+        console.error('Income error:', result.error);
       }
     } catch (error) {
       playError();

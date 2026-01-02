@@ -15,12 +15,13 @@ export class PrinterService {
     characterSet: 'UTF8' as any,
     width: 48
   };
-
-  constructor() {
-    this.loadConfig();
-  }
+  
+  private configLoaded = false;
 
   private loadConfig() {
+    // Only load config once
+    if (this.configLoaded) return;
+    
     const db = getDatabase();
     const paperWidth = db.prepare("SELECT value FROM settings WHERE key = 'printer_paper_width'").get() as { value: string } | undefined;
     const printerPort = db.prepare("SELECT value FROM settings WHERE key = 'printer_port'").get() as { value: string } | undefined;
@@ -32,10 +33,13 @@ export class PrinterService {
     if (printerPort) {
       this.config.interface = printerPort.value.toLowerCase();
     }
+    
+    this.configLoaded = true;
   }
 
   async printReceipt(transaction: any, type: 'income' | 'expense'): Promise<{ success: boolean; error?: string }> {
     try {
+      this.loadConfig(); // Ensure config is loaded
       const db = getDatabase();
       const orgName = db.prepare("SELECT value FROM settings WHERE key = 'organization_name'").get() as { value: string };
       const orgAddress = db.prepare("SELECT value FROM settings WHERE key = 'organization_address'").get() as { value: string };
@@ -125,6 +129,7 @@ export class PrinterService {
 
   async printDailySummary(summaryData: any): Promise<{ success: boolean; error?: string }> {
     try {
+      this.loadConfig(); // Ensure config is loaded
       const db = getDatabase();
       const orgName = db.prepare("SELECT value FROM settings WHERE key = 'organization_name'").get() as { value: string };
 

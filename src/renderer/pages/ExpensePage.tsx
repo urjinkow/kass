@@ -55,7 +55,7 @@ export const ExpensePage: React.FC = () => {
         setDescription('');
       } else {
         playError();
-        alert(result.error);
+        console.error('Expense error:', result.error);
       }
     } catch (error) {
       playError();

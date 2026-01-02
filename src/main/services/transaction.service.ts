@@ -34,9 +34,10 @@ export class TransactionService {
       : (sequence as any).expense_sequence + 1;
 
     // Update sequence
+    const columnName = type === 'income' ? 'income_sequence' : 'expense_sequence';
     this.db.prepare(`
       UPDATE receipt_sequences
-      SET ${type}_sequence = ?
+      SET ${columnName} = ?
       WHERE sequence_date = DATE(?)
     `).run(nextSeq, date);
 
