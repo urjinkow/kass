@@ -1,0 +1,33 @@
+:root[data-theme='dark'] {
+  /* Background colors */
+  --bg-primary: #1A1F2E;
+  --bg-secondary: #242B3D;
+  --bg-tertiary: #2D3548;
+  --bg-gradient: linear-gradient(135deg, #1A1F2E 0%, #2D3548 50%, #1A1F2E 100%);
+  
+  /* Glass effect */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-shadow: rgba(0, 0, 0, 0.3);
+  
+  /* Text colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0AEC0;
+  --text-muted: #718096;
+  
+  /* Accent colors */
+  --accent-jade: #5B8A72;
+  --accent-gold: #C9A227;
+  --accent-gold-light: #E5C158;
+  
+  /* Status colors */
+  --success: #48BB78;
+  --error: #F56565;
+  --warning: #ED8936;
+  --info: #4299E1;
+  
+  /* Buddhist theme colors */
+  --lotus-primary: #5B8A72;
+  --lotus-secondary: #C9A227;
+  --dharma-wheel: #C9A227;
+}

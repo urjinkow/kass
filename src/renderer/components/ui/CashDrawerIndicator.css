@@ -1,0 +1,35 @@
+.cash-drawer-indicator {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.cash-drawer {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.cash-drawer .drawer {
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.cash-drawer.open .drawer {
+  animation: drawerOpen 1.5s ease;
+}
+
+@keyframes drawerOpen {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(15px);
+  }
+  80% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

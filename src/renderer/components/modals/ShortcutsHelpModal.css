@@ -1,0 +1,78 @@
+.shortcuts-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.shortcuts-modal {
+  width: 90%;
+  max-width: 500px;
+  padding: 24px;
+}
+
+.shortcuts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.shortcuts-header h2 {
+  font-size: 24px;
+  color: var(--accent-gold);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: var(--accent-gold);
+}
+
+.shortcuts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.shortcut-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+}
+
+.shortcut-key {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  padding: 4px 12px;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  color: var(--accent-gold);
+  font-size: 14px;
+}
+
+.shortcut-action {
+  color: var(--text-primary);
+  font-size: 14px;
+}

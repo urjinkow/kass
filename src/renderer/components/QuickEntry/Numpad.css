@@ -1,0 +1,33 @@
+.numpad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.numpad-btn {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.numpad-btn.enter {
+  background: var(--accent-gold);
+  color: var(--bg-primary);
+}
+
+.numpad-btn.enter:hover {
+  background: var(--accent-gold-light);
+}
+
+.numpad-btn.clear {
+  background: var(--error);
+  color: white;
+}
+
+.numpad-btn.clear:hover {
+  opacity: 0.9;
+}
